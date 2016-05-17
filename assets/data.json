@@ -1,0 +1,49 @@
+{
+	"questions": [{
+		"question_assignedto": null,
+		"question_askedby": 1,
+		"question_tags": "capital, startup, profitability",
+		"question_topic": 3,
+		"question_dateasked": "2015-07-29 14:55:22.387+03",
+		"topic_color": "#ffaacc",
+		"question_assigneddate": null,
+		"topic_name": "Operations",
+		"topic_id": 3,
+		"question_text": "What is the best way of raising capital for business when the business is not yet at it's profitable stage?",
+		"question_assignedby": null,
+		"question_replies": null,
+		"question_id": 2
+	},
+	{
+		"question_assignedto": null,
+		"question_askedby": 1,
+		"question_tags": "startup, Nairobi,connections",
+		"question_topic": 3,
+		"question_dateasked": "2015-07-29 14:52:25.085+03",
+		"topic_color": "#ffaacc",
+		"question_assigneddate": null,
+		"topic_name": "Operations",
+		"topic_id": 3,
+		"question_text": "What is the first step to identifying business partners? I am having a struggle with this. Can't seem to find the right person to go into a long term partnership with. Please assist\r\n",
+		"question_assignedby": null,
+		"question_replies": [{
+			"reply_id": 1,
+			"reply_question_fk": 1,
+			"reply_text": "I'm glad to see that you are having that challenge Mr Kamau. That is often each entrepreneurs challenge when they set on their venture, Maintaining clarity of thought and attending a lot of networking events in your industry often offers you a lot of opportunity to come across the right people to partners. Do not be in a hurry to meet them; at the opportune moment you will sure meet someone you can go into a partnership with.",
+			"reply_date": "2015-07-29 15:05:33.048+03",
+			"reply_by": 1,
+			"reply_status": "approved",
+			"reply_flag": true
+		},
+		{
+			"reply_id": 1,
+			"reply_question_fk": 1,
+			"reply_text": "This is the most real answer to the above question.",
+			"reply_date": "2015-07-29 15:05:33.048+03",
+			"reply_by": 1,
+			"reply_status": "approved",
+			"reply_flag": true
+		}],
+		"question_id": 1
+	}]
+}

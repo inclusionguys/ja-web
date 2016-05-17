@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JA Web Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/default.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <style type="text/css">
+      .media{
+        margin: 10px;
+
+    }
+</style>
+
+<body>
+    <div id="wrapper" class="toggled">
+        {% include "common-templates/sidebar.html"%}
+        <!-- Page Content -->
+        <div id="page-content-wrapper" style="background-color: rgb(236, 242, 240);">
+            <a href="#menu-toggle" class="btn btn-xs btn-primary" id="menu-toggle" style="  position: fixed;z-index: 1;"><span class="glyphicon glyphicon glyphicon-menu-hamburger"></span></a>
+
+            <div class="container-fluid">
+                <br />
+                <br />
+                <div class="row">
+                 <div class="col-lg-12">
+                    <input type="search" class="form-control" id="input-search" placeholder="Search Members..." >
+                <br />
+                </div>
+
+                <div class="searchable-container">
+                    {% for m in members %}
+                    <div class="items col-xs-12 col-sm-6 col-md-6 col-lg-6 clearfix">
+                     <div class="info-block block-info clearfix">
+                        <div class="square-box pull-left">
+                            <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                        </div>
+                        <h4>Name: {{m.member_name}}</h4><span class="label label-primary">{{m.member_type}}</span>
+                        <p>
+                        <span>Phone: {{m.contact_telno}}</span> <br />
+                        <span>Email: {{m.contact_email}}</span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- JA Web Custom .js -->
+    <script src="js/ja-web.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $(function() {    
+            $('#input-search').on('keyup', function() {
+              var rex = new RegExp($(this).val(), 'i');
+              $('.searchable-container .items').hide();
+              $('.searchable-container .items').filter(function() {
+                return rex.test($(this).text());
+            }).show();
+          });
+        });
+    </script>
+
+</body>
+
+</html>

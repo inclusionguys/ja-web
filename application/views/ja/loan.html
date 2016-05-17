@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JA Web Admin</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="{{base-url}}css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{base-url}}css/accrue.css" rel="stylesheet">
+
+  <link href="{{base-url}}css/dataTables.bootstrap.css" rel="stylesheet">
+  <link href="{{base-url}}css/dropzone.css" rel="stylesheet">
+  <link href="{{base-url}}css/jquery.dataTables.min.css" rel="stylesheet">
+  <!-- <link href="{{base-url}}css/jquery.dataTables_themeroller.css" rel="stylesheet"> -->
+
+
+  <!-- Custom CSS -->
+  <link href="{{base-url}}css/simple-sidebar.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+          /* Tabs panel */
+          .tabbable-panel {
+            border:1px solid #eee;
+            padding: 10px;
+          }
+
+          /* Default mode */
+          .tabbable-line > .nav-tabs {
+            border: none;
+            margin: 0px;
+          }
+          .tabbable-line > .nav-tabs > li {
+            margin-right: 2px;
+          }
+          .tabbable-line > .nav-tabs > li > a {
+            border: 0;
+            margin-right: 0;
+            color: #737373;
+          }
+          .tabbable-line > .nav-tabs > li > a > i {
+            color: #a6a6a6;
+          }
+          .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+            border-bottom: 4px solid #fbcdcf;
+          }
+          .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+            border: 0;
+            background: none !important;
+            color: #333333;
+          }
+          .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+            color: #a6a6a6;
+          }
+          .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+            margin-top: 0px;
+          }
+          .tabbable-line > .nav-tabs > li.active {
+            border-bottom: 4px solid #f3565d;
+            position: relative;
+          }
+          .tabbable-line > .nav-tabs > li.active > a {
+            border: 0;
+            color: #333333;
+          }
+          .tabbable-line > .nav-tabs > li.active > a > i {
+            color: #404040;
+          }
+          .tabbable-line > .tab-content {
+            margin-top: -3px;
+            border: 0;
+            border-top: 1px solid #eee;
+            padding: 15px;
+          }
+          .portlet .tabbable-line > .tab-content {
+            padding-bottom: 0;
+          }
+
+          /* Below tabs mode */
+
+          .tabbable-line.tabs-below > .nav-tabs > li {
+            border-top: 4px solid transparent;
+          }
+          .tabbable-line.tabs-below > .nav-tabs > li > a {
+            margin-top: 0;
+          }
+          .tabbable-line.tabs-below > .nav-tabs > li:hover {
+            border-bottom: 0;
+            border-top: 4px solid #fbcdcf;
+          }
+          .tabbable-line.tabs-below > .nav-tabs > li.active {
+            margin-bottom: -2px;
+            border-bottom: 0;
+            border-top: 4px solid #f3565d;
+          }
+          .tabbable-line.tabs-below > .tab-content {
+            margin-top: -10px;
+            border-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+          }
+        </style>
+
+      </head>
+
+      <body>
+        <div id="wrapper" class="toggled">
+
+          {% include "common-templates/sidebar.html"%}
+
+          <!-- Page Content -->
+          <div id="page-content-wrapper" style="background-color: rgb(236, 242, 240);">
+            <a href="#menu-toggle" class="btn btn-xs btn-primary" id="menu-toggle" style="  position: fixed;z-index: 1;"><span class="glyphicon glyphicon glyphicon-menu-hamburger"></span></a>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <br />
+                  <br />
+                  <a href="{{base-url}}loans" class="btn btn-sm btn-primary"> All loans</a>
+                  <h3>Loan Details</h3>
+
+                  <div class="tabbable-panel">
+                    <div class="tabbable-line">
+                      <ul class="nav nav-tabs ">
+                        <li class="active">
+                          <a href="#tab_default_1" data-toggle="tab">
+                            Loan Summary</a>
+                          </li>
+                          <li>
+                            <a href="#tab_default_2" data-toggle="tab">
+                              Details </a>
+                            </li>
+                            <li>
+                              <a href="#tab_default_3" data-toggle="tab">
+                                Schedule </a>
+                              </li>
+                              <li>
+                                <a href="#tab_default_4" data-toggle="tab">
+                                  Schedule </a>
+                                </li>
+                                <li>
+                                  <a href="#tab_default_5" data-toggle="tab">
+                                    Documents </a>
+                                  </li>
+                                </ul>
+                                <div class="tab-content">
+                                  <div class="tab-pane active" id="tab_default_1">
+                                    <table class="table table-bordered table-striped" id="loans-table">
+                                      <thead style="background-color: white;">
+                                        <th></th>
+                                        <th>Details</th>
+                                      </thead> 
+                                      <tbody>
+                                        <tr>
+                                          <td><strong>Applicant Name</strong></td>
+                                          <td>{{loan.applicant_name}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Telephone</strong></td>
+                                          <td>{{loan.telephone_number}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Position Business</strong></td>
+                                          <td>{{loan.position_in_business}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Nature of Business</strong></td>
+                                          <td>{{loan.nature_of_business}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Location</strong></td>
+                                          <td>{{loan.current_location}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>loan Amount</strong></td>
+                                          <td>{{loan.loan_amount_required}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Date Applied</strong></td>
+                                          <td>{{loan.date_loan_requested}}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+
+                                  </div>
+                                  <div class="tab-pane" id="tab_default_2">
+                                    <table class="table table-bordered table-striped" id="loans-table">
+                                      <thead style="background-color: white;">
+                                        <th></th>
+                                        <th>Details</th>
+                                      </thead>
+                                      <tbody>
+
+                                        <tr>
+                                          <td><strong>Nature of business</strong></td>
+                                          <td>{{loan.nature of business}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Postal address</strong></td>
+                                          <td>{{loan.postal_address}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Email</strong></td>
+                                          <td>{{loan.email}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Total assets</strong></td>
+                                          <td>{{loan.total_assets}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan 2 amount</strong></td>
+                                          <td>{{loan.loan_2_amount}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Business_reference</strong></td>
+                                          <td>{{loan.business_reference}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Registration Number</strong></td>
+                                          <td>{{loan.registration_number}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Id number</strong></td>
+                                          <td>{{loan.id_no}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Year in operation</strong></td>
+                                          <td>{{loan.year_in_operation}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Expected 6 months expenses</strong></td>
+                                          <td>{{loan.expected_6_months_expenses_total}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Amount_from_members</strong></td>
+                                          <td>{{loan.amount_from_members}}</td>
+                                        </tr>
+
+                                        <tr>
+                                          <td><strong>Business_registration_certificate</strong></td>
+                                          <td>{{loan.business_registration_certificate}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Last_6_months_expenses_total</strong></td>
+                                          <td>{{loan.last_6_months_expenses_total}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Date_loan_requested</strong></td>
+                                          <td>{{loan.date_loan_requested}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Position_in_business</strong></td>
+                                          <td>{{loan.position_in_business}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Cash_at_hand</strong></td>
+                                          <td>{{loan.cash_at_hand}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Current_location</strong></td>
+                                          <td>{{loan.current_location}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_status</strong></td>
+                                          <td>{{loan.loan_status}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Repayment_period</strong></td>
+                                          <td>{{loan.repayment_period}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Number_of_members</strong></td>
+                                          <td>{{loan.number_of_members}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Bank_statement</strong></td>
+                                          <td>{{loan.bank_statement}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Telephone_number</strong></td>
+                                          <td>{{loan.telephone_number}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Bank_account_details</strong></td>
+                                          <td>{{loan.bank_account_details}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_1_institution</strong></td>
+                                          <td>{{loan.loan_1_institution}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Debts_you_owe</strong></td>
+                                          <td>{{loan.debts_you_owe}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_expenditure_plan</strong></td>
+                                          <td>{{loan.loan_expenditure_plan}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Business_needs</strong></td>
+                                          <td>{{loan.business_needs}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Date_loan_needed</strong></td>
+                                          <td>{{loan.date_loan_needed}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Cash_in_bank</strong></td>
+                                          <td>{{loan.cash_in_bank}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Pin_no</strong></td>
+                                          <td>{{loan.pin_no}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_amount_required</strong></td>
+                                          <td>{{loan.loan_amount_required}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Have_other_loan</strong></td>
+                                          <td>{{loan.have_other_loan}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_2_institution</strong></td>
+                                          <td>{{loan.loan_2_institution}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Group_laws</strong></td>
+                                          <td>{{loan.group_laws}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Business_pin_no</strong></td>
+                                          <td>{{loan.business_pin_no}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Name_of_business</strong></td>
+                                          <td>{{loan.name_of_business}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Loan_1_amount</strong></td>
+                                          <td>{{loan.loan_1_amount}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Owed_debts</strong></td>
+                                          <td>{{loan.owed_debts}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Applicant_id</strong></td>
+                                          <td>{{loan.applicant_id}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Request_id</strong></td>
+                                          <td>{{loan.request_id}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Debts_incurred_this_year</strong></td>
+                                          <td>{{loan.debts_incurred_this_year}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Assets_bought_this_</strong></td>
+                                          <td>{{loan.assets_bought_this_}}</td>
+                                        </tr>
+                                        <tr>
+                                          <td><strong>Total_revenue_to_date</strong></td>
+                                          <td>{{loan.total_revenue_to_date}}</td>
+                                        </tr>
+                                      </tbody>
+
+                                    </table>
+                                  </div>
+                                  <div class="tab-pane" id="tab_default_3">
+                                    <table class="table table-bordered table-striped" id="loans-table">    
+                                      <thead>
+                                        <th>duedate</th>                                          
+                                        <th>principal</th>           
+                                        <th>interest</th>                                        
+                                        <th>principal</th>                                            
+                                        <th>amount</th>
+                                        <th>outstandingbal</th>           
+                                      </thead>
+                                      <tbody>
+                                        {% for ls in loanschedule %}
+                                        <tr>
+                                         <td> {{ls.duedate}} </td>
+                                         <td> {{ls.principal}} </td>
+                                         <td> {{ls.interestpart}} </td>
+                                         <td> {{ls.principalpart}} </td>
+                                         <td> {{ls.amount}} </td>
+                                         <td> {{ls.outstandingbal}} </td>
+                                       </tr>
+                                       {% endfor %}
+                                     </tbody>
+                                   </table>
+                                 </div>
+
+                                 <div class="tab-pane" id="tab_default_4">
+                                   <div class="calculator-loan">
+                                    <div class="thirty form">
+
+                                      <div class="accrue-field-amount"><p><label>Loan Amount:</label>
+                                        <input class="amount" value="{{loan.loan_amount_required}}" type="text">
+                                      </p></div><div class="accrue-field-rate"><p><label>Rate (APR):</label><input class="rate" value="10%" type="text"></p></div><div class="accrue-field-term"><p><label>Term:</label><input class="term" value="36m" type="text"><small>Format: 12m, 36m, 3y, 7y</small></p></div></div>
+
+                                      <div class="">
+                                        <p><label>Results:</label></p>
+                                        <div class="results"><p><strong>Monthly Payment:</strong>
+                                          <br>231.58</p>
+                                          <p><strong>Number of Payments:</strong>
+                                            <br>36</p><p><strong>Total Payments:</strong><br>8,336.82</p>
+                                            <p><strong>Total Interest:</strong><br>836.82</p></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="tab-pane" id="tab_default_5">
+                                        <h2>Upload a Document</h2>
+                                        <div id="dropzone">
+                                        
+                                         <form action="/upload" class="dropzone needsclick" id="myDrop">
+                                          <div class="dz-message needsclick">
+                                            Drop files here or click to upload.<br />
+                                            <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+                                            </span>
+                                          </div>
+
+                                        </form></div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+                              </div>
+                            </div>
+                            <!-- /#page-content-wrapper -->
+
+                          </div>
+                          <!-- /#wrapper -->
+
+                          <!-- jQuery -->
+
+                          <script src="{{base-url}}js/jquery.js"></script>
+                          <script src="{{base-url}}js/dropzone.js"></script>
+                          <script src="{{base-url}}js/jquery.accrue.min.js"></script>
+                          <!-- Bootstrap Core JavaScript -->
+                          <script src="{{base-url}}js/bootstrap.min.js"></script>
+                          <script src="{{base-url}}js/dataTables.bootstrap.js"></script>
+                          <script src="{{base-url}}js/jquery.dataTables.min.js"></script>
+
+                          <!-- JA Web Custom .js -->
+                          <script src="{{base-url}}js/ja-web.js"></script>
+
+                          <!-- Menu Toggle Script -->
+                          <script>
+                           $(function(){
+                            Dropzone.autoDiscover = false;
+                           // var myDropzone = $("#myDrop").dropzone({ url: "/file/post" });
+
+
+
+                           var dropzone = new Dropzone('#myDrop', {
+                            // previewTemplate: document.querySelector('#preview-template').innerHTML,
+                            parallelUploads: 2,
+                            thumbnailHeight: 120,
+                            thumbnailWidth: 120,
+                            maxFilesize: 3,
+                            filesizeBase: 1000,
+                            thumbnail: function(file, dataUrl) {
+                              if (file.previewElement) {
+                                file.previewElement.classList.remove("dz-file-preview");
+                                var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
+                                for (var i = 0; i < images.length; i++) {
+                                  var thumbnailElement = images[i];
+                                  thumbnailElement.alt = file.name;
+                                  thumbnailElement.src = dataUrl;
+                                }
+                                setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
+                              }
+                            }
+
+                          });
+
+
+  // Now fake the file upload, since GitHub does not handle file uploads
+  // and returns a 404
+
+  var minSteps = 6,
+  maxSteps = 60,
+  timeBetweenSteps = 100,
+  bytesPerStep = 100000;
+
+  dropzone.uploadFiles = function(files) {
+    var self = this;
+
+    for (var i = 0; i < files.length; i++) {
+
+      var file = files[i];
+      totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+      for (var step = 0; step < totalSteps; step++) {
+        var duration = timeBetweenSteps * (step + 1);
+        setTimeout(function(file, totalSteps, step) {
+          return function() {
+            file.upload = {
+              progress: 100 * (step + 1) / totalSteps,
+              total: file.size,
+              bytesSent: (step + 1) * file.size / totalSteps
+            };
+
+            self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+            if (file.upload.progress == 100) {
+              file.status = Dropzone.SUCCESS;
+              self.emit("success", file, 'success', null);
+              self.emit("complete", file);
+              self.processQueue();
+            }
+          };
+        }(file, totalSteps, step), duration);
+      }
+    }
+  }
+
+
+
+
+
+  $(".calculator-loan").accrue({
+   mode: "amortization"
+ });
+  $('#loans').DataTable();
+  $('input').trigger('change');
+});
+
+
+</script>
+
+</body>
+
+</html>

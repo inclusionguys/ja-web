@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JA Web Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- <link href="css/jquery.dataTables_themeroller.css" rel="stylesheet"> -->
+    
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div id="wrapper" class="toggled">
+
+        {% include "common-templates/sidebar.html"%}
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" style="background-color: rgb(236, 242, 240);">
+<a href="#menu-toggle" class="btn btn-xs btn-primary" id="menu-toggle" style="  position: fixed;z-index: 1;"><span class="glyphicon glyphicon glyphicon-menu-hamburger"></span></a>
+
+  <div class="container-fluid">
+
+                <div class="row">
+    
+                    <div class="col-lg-12">
+                        <h1>JA Loans</h1>
+<!--                         <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
+
+                        <table class="table table-bordered table-striped" id="loans-table">
+                        <thead style="background-color: white;">
+                          <th>Loan #</th>
+                          <th>Member</th>
+                          <th>Loan Application date</th>
+                          <th>Loan Amount</th>
+                          <th>Loan Application Date</th>
+                          <th>Loan Status</th>
+                        </thead>
+                        <tbody>
+                        {% for l in loans %} 
+                          <tr>
+                          <td><a href="/loans/{{l.request_id}}">JA-{{l.request_id}}</a></td>
+                          <td><a href="/loans/{{l.request_id}}">{{l.applicant_name}}</a></td>
+                          <td>{{l.date_loan_needed}}</td>
+                          <td>KES {{l.loan_amount_required}}/=</td>
+                          <td>{{l.date_loan_requested}}</td>
+                          <td><span class="label label-default">{{l.loan_status}}</span></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+
+                        </table>
+
+ 
+            </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dataTables.bootstrap.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+
+    <!-- JA Web Custom .js -->
+    <script src="js/ja-web.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+$(function(){
+
+
+  $(document).ready(function(){
+    $('#loans-table').DataTable();
+});
+})
+
+  
+    </script>
+
+</body>
+
+</html>

@@ -79,16 +79,11 @@ $db['default']['hostname'] = '162.243.19.205';
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'postgres';
-$db['default']['database'] = 'jaweb';
+$db['default']['database'] = 'ja';
 
 #Changing params.. upstream
-$db['default']['port'] = '4545';
-$db['default']['password'] = 'kuwepo1!';
-
-#Changing params.. working copy
-$db['default']['password'] = 'postgres';
-$db['default']['port'] = '5432';
-
+$db['default']['port'] = '17833';
+$db['default']['password'] = 'tH2BOXEECeros545';
 
 $db['default']['dbdriver'] = 'postgre';
 

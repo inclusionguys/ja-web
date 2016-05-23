@@ -31,19 +31,19 @@
       </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="<?php echo base_url(); ?>dashboard">Dashboard</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/members">Members</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/mentorship">Mentorship</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/loans">Loans</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
 
 
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="<?php echo base_url(); ?>dashboard">Dashboard</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/members">Members</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/mentorship">Mentorship</a></li>
-        <li><a href="<?php echo base_url(); ?>dashboard/loans">Loans</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
 

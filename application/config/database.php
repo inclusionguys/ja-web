@@ -74,16 +74,21 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default']['hostname'] = '162.243.19.205';
+$db['default']['hostname'] = 'localhost';
 // $db['default']['username'] = 'postgres';
 // $db['default']['database'] = 'loyalty';
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'postgres';
-$db['default']['database'] = 'ja';
+$db['default']['database'] = 'jaweb';
 
 #Changing params.. upstream
 $db['default']['port'] = '17833';
 $db['default']['password'] = 'tH2BOXEECeros545';
+
+#Changing params.. working copy
+$db['default']['port'] = '5432';
+$db['default']['password'] = 'postgres';
 
 $db['default']['dbdriver'] = 'postgre';
 

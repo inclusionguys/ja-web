@@ -7,7 +7,7 @@
  <div class="col s12 m12">
   <div class="card-panel">
     <span class="flow-text">
-      <a href="<?= base_url(); ?>" class="btn blue lighten-3 right"> Apply Loan</a>
+      <a href="<?= base_url(); ?>index.php/dashboard/profile/@<?= $memberdetails->display_name;?>/apply" class="btn blue lighten-3 right"> Apply Loan</a>
       <?= $memberdetails->member_name;?> 
       (<?= $memberdetails->member_type;?> ) <br />
       <?= $memberdetails->contact_email;?>  <br />

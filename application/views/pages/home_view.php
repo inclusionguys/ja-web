@@ -96,10 +96,6 @@
                 <br />
               </div>
             </div>
-            <div class="col l12 s12 m12 center">
-              <p class="flow-text">Build Customer Relationships With The Leading Business Loyalty Program</p>
-              <a href="<?php echo base_url();?>signup" class="btn blue">Become a Paid Merchant</a>
-            </div>
           </div>
         </div>
       </div>

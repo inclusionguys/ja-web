@@ -5,14 +5,10 @@
           <img src="<?php echo base_url(); ?>assets/img/ja-logo.png" style="width: 72px;padding-top: 6px;padding-bottom: 6px;">          <!-- p<span>ai</span>d -->
         </a>
         <ul class="right hide-on-med-and-down">
-          <li><a class="teal-text" href="<?php echo base_url(); ?>login">Login</a></li>
-          <li><a class="btn btn-sm teal  white-text" href="<?php echo base_url(); ?>pricing">Join</a></li>
+          <!-- <li><a class="teal-text" href="<?php echo base_url(); ?>login">Login</a></li> -->
         </ul>
-        <ul id="nav-mobile" class="side-nav">
-          <li><a class="teal-text" href="<?php echo base_url(); ?>login">Login</a></li>
-          <li><a class="teal-text" href="<?php echo base_url(); ?>pricing">Join</a></li>
-        </ul>
-        <a href="<?php echo base_url(); ?>" data-activates="nav-mobile" class="button-collapse"><i class="material-icons teal-text">menu</i></a>
+        <a href="<?php echo base_url(); ?>" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons teal-text">menu</i></a>
       </div>
     </nav>
   </div>

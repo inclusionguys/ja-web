@@ -7,16 +7,22 @@ class Users extends CI_Model {
         parent::__construct();
     }
 
+    function create_member($member) {
+        $this->db->insert('tbl_member', $member); 
+        $insert_id = $this->db->insert_id(); 
+        return $insert_id;
+    }
+
     function get_user($username) {
         $this->db->select('*');
-        $this->db->where('us_username', $username);
-        $query = $this->db->get('tbl_user');
+        $this->db->where('display_name', $username);
+        $query = $this->db->get('tbl_member');
         $returnable = $query->result();
         return $returnable[0];
     }
 
     function get_users() {
-        $query = $this->db->query('SELECT * FROM  tbl_user;');
+        $query = $this->db->query('SELECT * FROM  tbl_member;');
         return $query->result();
     }
     function get_user_types() {
@@ -83,7 +89,7 @@ class Users extends CI_Model {
         if ($this->check_email_exists($email)) {
             $this->db->where('activation', $hash);
             $this->db->where('email', $email);
-            $this->db->update('tbl_user', array('status' => 1));
+            $this->db->update('tbl_member', array('status' => 1));
             $result = true;
         } else {
             $result = false;

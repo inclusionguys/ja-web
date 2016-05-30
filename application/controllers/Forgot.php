@@ -3,7 +3,7 @@
  if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class signup extends CI_Controller {
+class forgot extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -18,8 +18,8 @@ class signup extends CI_Controller {
 
         // $data['countries'] = $this->countries->get_all();
         $data['unity'] = '';
-        $data['pagetitle'] = 'Paid Merchant Signup';
-        $this->load->view('pages/signup_view',$data);
+        $data['pagetitle'] = 'Paid Merchant forgot';
+        $this->load->view('pages/forgot_password_view',$data);
     }
 
     // For those who may forget their passwords to the system
@@ -27,25 +27,22 @@ class signup extends CI_Controller {
 
     }
 
-    function submit() {
-        $json = file_get_contents('php://input');
-        $signup = (json_decode($json));
-
+    function recover() {
         $redirect = '';
-        if ($signup->password !== $signup->password_confirmation) {
-            $resp = array('error' => 'Confirmation password must match password' ,'redirect' => $redirect  );echo(json_encode($resp));die;
+
+        $json = file_get_contents('php://input');
+        $forgot = (json_decode($json));
+           // if (strlen($forgot->display_name) > 1 && !filter_var($forgot->email, FILTER_VALIDATE_EMAIL)) {            $resp = array('error' => 'Invalid email format' ,'redirect' => $redirect  );echo(json_encode($resp));die;    }
+
+
+        if (strlen($forgot->display_name)<1 && strlen($forgot->email) < 1) {
+            $resp = array('error' => 'Please enter either your email or username before proceeding' ,'redirect' => $redirect  );echo(json_encode($resp));die;
         }
-        if ($signup->terms < 1) {
-            $resp = array('error' => 'You must agree to terms and conditions before proceeding' ,'redirect' => $redirect  );echo(json_encode($resp));die;
-        }
+
 
         $member = array(
-            'member_name'       =>  $signup->first_name .' '.$signup->last_name,
-            'member_type'       =>  'trainee',
-            'member_password'   =>  $this->_encrypt_pass($signup->password),
-            'contact_email'     =>  $signup->email,
-            'display_name'      =>  $signup->display_name,
-            'member_status' => 't'
+            'contact_email'     =>  $forgot->email,
+            'display_name'      =>  $forgot->display_name
             );
 
         // $user = $this->users->get_userdetails($user_details->member_id);

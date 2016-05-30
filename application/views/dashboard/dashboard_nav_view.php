@@ -18,41 +18,57 @@
   <meta name="author" content="">
 
   <link rel="icon" href="<?php echo base_url(); ?>assets/img/ja-logo.png" sizes="16x16" type="image/png">   
-  </head>
+</head>
 <body>
-<div id="loader" style="display:none;">
-  <img src="<?php echo base_url(); ?>assets/img/paid-loader.gif" class="ajax-loader"/>
+  <div id="loader" style="display:none;">
+    <img src="<?php echo base_url(); ?>assets/img/paid-loader.gif" class="ajax-loader"/>
+  </div>
+  <div class="no-container">
+    <nav>
+      <div class="nav-wrapper blue-grey darken-1">
+        <a href="#!" class="brand-logo">
+          <img src="<?php echo base_url(); ?>assets/img/ja-logo.png" style="height: 60px; margin-left; 15px;padding: 4px;">
+        </a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+
+          <?php if ($member_type == 'admin') {        ?>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
+          <?php  } else {} ?>
+          <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+
+
+        <ul class="side-nav" id="mobile-demo">
+          <?php      if ($member_type == 'admin') {        ?>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown-mobile"><?php echo $userdata['username']; ?>
+           <i class="material-icons right">arrow_drop_down</i></a></li>
+           <?php  } else { } ?>
+           <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown-mobile"><?php echo $userdata['username']; ?>
+             <i class="material-icons right">arrow_drop_down</i></a></li>
+           </ul>
+
+
+           <ul id="profile-dropdown" class="dropdown-content">
+ <!--  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+-->  <li class="divider"></li>
+<li><a href="<?php echo base_url();?>logout">logout</a></li>
+</ul>
+<ul id="profile-dropdown-mobile" class="dropdown-content">
+<!--           <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li> -->
+  <li class="divider"></li>
+  <li><a href="<?php echo base_url();?>logout">logout</a></li>
+</ul>
+
 </div>
-<div class="no-container">
-  <nav>
-    <div class="nav-wrapper blue-grey darken-1">
-      <a href="#!" class="brand-logo">
-        <img src="<?php echo base_url(); ?>assets/img/ja-logo.png" style="height: 60px; margin-left; 15px;padding: 4px;">
-      </a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-
-
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard">Dashboard</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/members">Members</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-
-      <ul id="profile-dropdown" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-
-    </div>
-  </nav>
+</nav>

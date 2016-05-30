@@ -1,5 +1,5 @@
  $(function(){
-    var customers = $.get( "../../dashboard/merchantcustomers");
+    var customers = $.get( "");
     console.log('cust' + customers.responseText);
 
 

@@ -4,304 +4,254 @@
 <div class="section"></div>
 
 <div class="row">            
- <div class="col s12 m7 offset-m2">
+ <div class="col s12 m12 offset-m2">
   <div class="card-panel">
 
     <span class="flow-text">
      Apply Loan
    </span>
-
-
-   <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="applicant_name" type="text" class="validate" />
-          <label for="applicant_name">applicant_name</label>
-        </div>
+   <div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+      <div class="stepwizard-step">
+        <a href="#step-1" type="button" class="btn btn-primary blue btn-circle">1</a>
+        <p>Business Details</p>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="id_no" type="text" class="validate" />
-          <label for="id_no">id_no</label>
-        </div>
+      <div class="stepwizard-step">
+        <a href="#step-2" type="button" class="btn btn-default blue btn-circle" disabled="disabled">2</a>
+        <p>Contact Person</p>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="telephone_number" type="text" class="validate" />
-          <label for="telephone_number">telephone_number</label>
-        </div>
+      <div class="stepwizard-step">
+        <a href="#step-3" type="button" class="btn btn-default blue btn-circle" disabled="disabled">3</a>
+        <p>Login Details</p>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="postal_address" type="text" class="validate" />
-          <label for="postal_address">postal_address</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="text" class="validate" />
-          <label for="email">email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="position_in_business" type="text" class="validate" />
-          <label for="position_in_business">position_in_business</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="name_of_business" type="text" class="validate" />
-          <label for="name_of_business">name_of_business</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="nature_of_business" type="text" class="validate" />
-          <label for="nature_of_business">nature_of_business</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="year_in_operation" type="text" class="validate" />
-          <label for="year_in_operation">year_in_operation</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="registration_number" type="text" class="validate" />
-          <label for="registration_number">registration_number</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="pin_no" type="text" class="validate" />
-          <label for="pin_no">pin_no</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="number_of_members" type="text" class="validate" />
-          <label for="number_of_members">number_of_members</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="current_location" type="text" class="validate" />
-          <label for="current_location">current_location</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="business_reference" type="text" class="validate" />
-          <label for="business_reference">business_reference</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="total_revenue_to_date" type="text" class="validate" />
-          <label for="total_revenue_to_date">total_revenue_to_date</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="last_6_months_expenses_total" type="text" class="validate" />
-          <label for="last_6_months_expenses_total">last_6_months_expenses_total</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="owed_debts" type="text" class="validate" />
-          <label for="owed_debts">owed_debts</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="expected_6_months_expenses_total" type="text" class="validate" />
-          <label for="expected_6_months_expenses_total">expected_6_months_expenses_total</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="total_assets_held" type="text" class="validate" />
-          <label for="total_assets_held">total_assets_held</label>
-        </div> 
-      </div> 
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="assets_bought_this_year" type="text" class="validate" />
-          <label for="assets_bought_this_year">assets_bought_this_year</label>
-        </div> 
-      </div> 
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="cash_in_bank" type="text" class="validate" />
-          <label for="cash_in_bank">cash_in_bank</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="debts_you_owe" type="text" class="validate" />
-          <label for="debts_you_owe">debts_you_owe</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="amount_from_members" type="text" class="validate" />
-          <label for="amount_from_members">amount_from_members</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="debts_incurred_this_year" type="text" class="validate" />
-          <label for="debts_incurred_this_year">debts_incurred_this_year</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_expenditure_plan" type="text" class="validate" />
-          <label for="loan_expenditure_plan">loan_expenditure_plan</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="business_needs" type="text" class="validate" />
-          <label for="business_needs">business_needs</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_amount_required" type="text" class="validate" />
-          <label for="loan_amount_required">loan_amount_required</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="date_loan_needed" type="text" class="validate" />
-          <label for="date_loan_needed">date_loan_needed</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="cash_at_hand" type="text" class="validate" />
-          <label for="cash_at_hand">cash_at_hand</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_1_institution" type="text" class="validate" />
-          <label for="loan_1_institution">loan_1_institution</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_1_amount" type="text" class="validate" />
-          <label for="loan_1_amount">loan_1_amount</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="have_other_loan" type="text" class="validate" />
-          <label for="have_other_loan">have_other_loan</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_2_institution" type="text" class="validate" />
-          <label for="loan_2_institution">loan_2_institution</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="applicant_id" type="text" class="validate" />
-          <label for="applicant_id">applicant_id</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_2_amount" type="text" class="validate" />
-          <label for="loan_2_amount">loan_2_amount</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="business_registration_certificate" type="text" class="validate" />
-          <label for="business_registration_certificate">business_registration_certificate</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="business_pin_no" type="text" class="validate" />
-          <label for="business_pin_no">business_pin_no</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="bank_account_details" type="text" class="validate" />
-          <label for="bank_account_details">bank_account_details</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="group_laws" type="text" class="validate" />
-          <label for="group_laws">group_laws</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="bank_statement" type="text" class="validate" />
-          <label for="bank_statement">bank_statement</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="members_cosign" type="text" class="validate" />
-          <label for="members_cosign">members_cosign</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="repayment_period" type="text" class="validate" />
-          <label for="repayment_period">repayment_period</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="loan_status" type="text" class="validate" />
-          <label for="loan_status">loan_status</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="date_loan_requested" type="text" class="validate" />
-          <label for="date_loan_requested">date_loan_requested</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="total_assets_held_held" type="text" class="validate" />
-          <label for="total_assets_held_held">total_assets_held_held</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="assets_bought_this_yearyear" type="text" class="validate" />
-          <label for="assets_bought_this_yearyear">assets_bought_this_yearyear</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="request_member" type="text" class="validate" />
-          <label for="request_member">request_member</label>
-        </div>
-      </div>
-
-    </form>
+    </div>
   </div>
 
 
+  <div class="row">
 
+    <form  class="loanapplication-form" ng-submit="LoanPost()">
+      <div class="row setup-content" id="step-1">
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">perm_identity</i>
+            <input ng-model="applicant_name" id="applicant_name" type="text" class="validate" />
+            <label for="applicant_name">Applicant Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="id_no" id="id_no" type="text" class="validate" />
+            <label for="id_no">ID number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">email</i>
+            <input ng-model="email" id="email" type="text" class="validate" />
+            <label for="email">email</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">contact_phone</i>
+            <input ng-model="telephone_number" id="telephone_number" type="text" class="validate" />
+            <label for="telephone_number">Telephone number</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">picture_in_picture</i>
+            <input ng-model="postal_address" id="postal_address" type="text" class="validate" />
+            <label for="postal_address">Postal address</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m8">
+            <i class="material-icons blue-text prefix">receipt</i>
+            <input ng-model="name_of_business" id="name_of_business" type="text" class="validate" />
+            <label for="name_of_business">Name of business</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <i class="material-icons blue-text prefix">contacts</i>
+            <input ng-model="position_in_business" id="position_in_business" type="text" class="validate" />
+            <label for="position_in_business">Position in business</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m8">
+            <i class="material-icons blue-text prefix">visibility</i>
+            <input ng-model="nature_of_business" id="nature_of_business" type="text" class="validate" />
+            <label for="nature_of_business">Nature of business</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <i class="material-icons blue-text prefix">today</i>
+            <input ng-model="year_in_operation" id="year_in_operation" type="number" class="validate" />
+            <label for="year_in_operation">Year in Operation</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="registration_number" id="registration_number" type="text" class="validate" />
+            <label for="registration_number">Registration Number</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="pin_no" id="pin_no" type="text" class="validate" />
+            <label for="pin_no">PIN number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="number_of_members" id="number_of_members" type="number" class="validate" />
+            <label for="number_of_members">Number of Members</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">my_location</i>
+            <input ng-model="current_location" id="current_location" type="text" class="validate" />
+            <label for="current_location">Current Location</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">recent_actors</i>
+            <input ng-model="business_reference" id="business_reference" type="text" class="validate" />
+            <label for="business_reference">Business Reference</label>
+          </div>
+        </div>
+        <a href="#step-2" type="button" class="btn btn-default blue next-btn">Next</a>
+      </div>
+      <div class="row setup-content" id="step-2">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">trending_up</i>
+            <input ng-model="total_revenue_to_date" id="total_revenue_to_date" type="text" class="validate" />
+            <label for="total_revenue_to_date">Total Revenue Earned</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">credit_card</i>
+            <input ng-model="last_6_months_expenses_total" id="last_6_months_expenses_total" type="text" class="validate" />
+            <label for="last_6_months_expenses_total">Expenses over the last 6 months</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="expected_6_months_expenses_total" id="expected_6_months_expenses_total" type="text" class="validate" />
+            <label for="expected_6_months_expenses_total">Expected 6 months expenses</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">trending_flat</i>
+            <input ng-model="owed_debts" id="owed_debts" type="text" class="validate" />
+            <label for="owed_debts">owed debts amount</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <i class="material-icons blue-text prefix">trending_down</i>
+            <input ng-model="debts_you_owe" id="debts_you_owe" type="text" class="validate" />
+            <label for="debts_you_owe">Debts you owe</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">library_add</i>
+            <input ng-model="total_assets_held" id="total_assets_held" type="text" class="validate" />
+            <label for="total_assets_held">total assets worth</label>
+          </div> 
+        </div> 
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">dashboard</i>
+            <input ng-model="assets_bought_this_year" id="assets_bought_this_year" type="text" class="validate" />
+            <label for="assets_bought_this_year">Assets bought this year</label>
+          </div> 
+        </div> 
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">business</i>
+            <input ng-model="cash_in_bank" id="cash_in_bank" type="text" class="validate" />
+            <label for="cash_in_bank">Cash in bank</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">group_work</i>
+            <input ng-model="amount_from_members" id="amount_from_members" type="text" class="validate" />
+            <label for="amount_from_members">Members contributed amount</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">thumb_down</i>
+            <input ng-model="debts_incurred_this_year" id="debts_incurred_this_year" type="text" class="validate" />
+            <label for="debts_incurred_this_year">debts incurred this year</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">view_agenda</i>
+            <textarea id="business_needs" ng-model="business_needs"  class="materialize-textarea"></textarea>
+            <label for="business_needs">Business Needs</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="loan_amount_required" id="loan_amount_required" type="text" class="validate" />
+            <label for="loan_amount_required">loan Amount Required</label>
+          </div>
+        </div>
+        <a href="#step-3" type="button" class="btn">Next</a>
+      </div>
+      <div class="row setup-content" id="step-3">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="cash_at_hand" id="cash_at_hand" type="text" class="validate" />     
+
+            <label for="cash_at_hand">cash at hand</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 ">
+            <input type="checkbox" ng-model="have_other_loan" id="have_other_loan" ng-click="sa = !sa" />
+            <label for="have_other_loan">I Have a loan with another institution</label>  
+            <br />
+            <br />
+
+          </div>
+          <div  ng-show="sa">
+            <div class="input-field col s12 m7">
+              <i class="material-icons blue-text prefix">business</i>
+              <input ng-model="loan_1_institution" id="loan_1_institution" type="text" class="validate" />
+              <label for="loan_1_institution">institution</label>
+            </div>
+            <div class="input-field col s5">
+              <i class="material-icons blue-text prefix">restore</i>
+              <input ng-model="loan_1_amount" id="loan_1_amount" type="text" class="validate" />
+              <label for="loan_1_amount">Amount</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="business_registration_certificate" id="business_registration_certificate" type="text" class="validate" />
+            <label for="business_registration_certificate">Business Registration Certificate</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons blue-text prefix">mode_edit</i>
+            <input ng-model="business_pin_no" id="business_pin_no" type="text" class="validate" />
+            <label for="business_pin_no">Business Pin number</label>
+          </div>
+        </div>
+        <button type="submit"  class="btn green white-text "> Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
 </div>
 
@@ -319,6 +269,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/materialize.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/chartist.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.tablecloth.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/wiz.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ngprogress.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/myApp.js"></script>

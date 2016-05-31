@@ -61,7 +61,7 @@ class Login extends CI_Controller {
                         'user_details' =>  $user_details
                         );
 
-                    $redirect = ($user_details->member_type == 'merchant_pos') ? 'dashboard/pos' : 'dashboard' ;
+                    $redirect = ($user_details->member_type == 'trainee') ? 'dashboard/profile' : 'dashboard' ;
 
                     $this->session->set_userdata($newdata);
                     $arrayName = array('error' => 'none' ,'redirect' => $redirect  );echo(json_encode($arrayName));die;

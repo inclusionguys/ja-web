@@ -7,6 +7,12 @@ class Loans extends CI_Model {
         parent::__construct();
     }
 
+      function create_loanrequest($loan) {
+        $this->db->insert('tbl_loan_request', $loan); 
+        $insert_id = $this->db->insert_id(); 
+        return $insert_id;
+    }
+
     function get_loan($loanid) {
         $this->db->select('*');
         $this->db->where('request_id', $loanid);

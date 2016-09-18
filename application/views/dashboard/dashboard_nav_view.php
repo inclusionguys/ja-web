@@ -38,9 +38,11 @@
           <li><a href="<?php echo base_url(); ?>index.php/dashboard/mentorship">Mentorship</a></li>
           <li><a href="<?php echo base_url(); ?>index.php/dashboard/loans">Loans</a></li>
           <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
-          <?php  } else {} ?>
+          <?php  } else { ?>
           <li><a class="dropdown-button" href="#!" data-activates="profile-dropdown"><?php echo $userdata['username']; ?> <i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
+<?php } ?>
+  
+      </ul>
 
 
         <ul class="side-nav" id="mobile-demo">

@@ -2,7 +2,8 @@
 app.controller("myCtrl", function($scope, $http,$location,ngProgressFactory) {
   $scope.progressbar = ngProgressFactory.createInstance();
 
-  $scope.base_url = "http://localhost/ja-web/";
+  // $scope.base_url = "http://localhost:81/ja-web/";
+  $scope.base_url = "http://188.166.67.200/ja-web/";
   
 
   $scope.username = "";
